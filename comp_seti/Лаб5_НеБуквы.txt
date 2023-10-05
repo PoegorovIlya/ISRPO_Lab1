@@ -1,0 +1,77 @@
+interface Vlan2
+ip address 192.168.12.1 255.255.255.0
+ex
+interface Vlan3
+ip address 192.168.13.1 255.255.255.0
+ex
+interface Vlan4
+ip address 192.168.14.1 255.255.255.0
+ex
+interface Port-channel1
+switchport mode access
+switchport access vlan 2
+no ip address 192.168.16.1 255.255.255.0
+ex
+interface Port-channel2
+switchport mode access
+switchport access vlan 3
+no ip address 192.168.17.1 255.255.255.0
+ex
+interface Port-channel3
+switchport mode access
+switchport access vlan 4
+no ip address 192.168.18.1 255.255.255.0
+ex
+interface FastEthernet0/1
+channel-group 1 mode active
+switchport mode access
+switchport access vlan 2
+ex
+interface FastEthernet0/2
+channel-group 1 mode active
+switchport mode access
+switchport access vlan 2
+ex
+interface FastEthernet0/3
+switchport mode access
+switchport access vlan 3
+channel-group 2 mode active
+ex
+interface FastEthernet0/4
+switchport mode access
+switchport access vlan 3
+channel-group 2 mode active
+ex
+interface FastEthernet0/5
+switchport mode access
+switchport access vlan 4
+channel-group 3 mode active
+ex
+interface FastEthernet0/6
+switchport mode access
+switchport access vlan 4
+channel-group 3 mode active
+ex
+---------------------------------------------
+int fastEthernet 0/1
+channel-group 1 mode active
+ex
+int fastEthernet 0/2
+channel-group 1 mode active
+ex
+
+
+
+int fastEthernet 0/3
+channel-group 2 mode active
+ex
+int fastEthernet 0/4
+channel-group 2 mode active
+ex
+int fastEthernet 0/5
+channel-group 3 mode active
+ex
+int fastEthernet 0/6
+channel-group 3 mode active
+ex
+

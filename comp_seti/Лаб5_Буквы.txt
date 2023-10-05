@@ -1,0 +1,37 @@
+----SWITCH------
+
+interface FastEthernet0/1
+no channel-protocol lacp
+ex
+interface FastEthernet0/2
+no channel-protocol lacp
+ex
+no ip default-gateway 192.168.17.1
+-----MSWITCH-------------------
+interface FastEthernet0/1
+no channel-protocol lacp
+ex
+interface FastEthernet0/2
+no channel-protocol lacp
+ex
+interface FastEthernet0/3
+no channel-protocol lacp
+ex
+interface FastEthernet0/4
+no channel-protocol lacp
+ex
+interface FastEthernet0/5
+no channel-protocol lacp
+ex
+interface FastEthernet0/6
+no channel-protocol lacp
+ex
+interface Vlan2
+ip address 192.168.15.1 255.255.255.0
+ex
+interface Vlan3
+ip address 192.168.16.1 255.255.255.0
+ex
+interface Vlan4
+ip address 192.168.17.1 255.255.255.0
+ex

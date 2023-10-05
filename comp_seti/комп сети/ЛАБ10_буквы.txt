@@ -1,0 +1,71 @@
+no ip access-list extended FOR-ORGANIZATION
+
+ip access-list extended FOR-ORGANIZATION
+permit tcp any host 192.168.115.2 eq www
+permit tcp 192.168.15.0 0.0.0.255 host 192.168.115.3 eq ftp
+permit tcp 192.168.16.0 0.0.0.255 host 192.168.115.3 eq ftp
+deny ip any host 192.168.115.3 
+permit ip any any
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---------------------------------------------------
+ip access-list extended FOR-ORGANIZATION
+permit ip any host 192.168.115.2
+permit ip 192.168.15.0 0.0.0.255 host 192.168.115.3
+permit ip 192.168.16.0 0.0.0.255 host 192.168.115.3
+deny ip any host 192.168.115.3 
+permit ip any any
+
+no ip access-list extended FOR-PROVIDER
+
+ip access-list extended FOR-PROVIDER
+permit ip host 210.210.2.2 host 192.168.115.2
+deny ip host 210.210.3.2 host 192.168.115.3 
+
+
+
+
+
+
+
+
+
+permit ip host 210.210.3.2 any
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+------------------------------------------------
+ip access-list extended FOR-ORGANIZATION
+permit ip any host 192.168.112.2
+permit ip 192.168.12.0 0.0.0.255 host 192.168.112.3
+permit ip 192.168.13.0 0.0.0.255 host 192.168.112.3
+deny ip any host 192.168.112.3 
+permit ip any any
+
+ip access-list extended FOR-OTHER
+permit tcp host 210.210.0.2 host 192.168.112.2 eq www
+permit ip host 210.210.3.2 any
